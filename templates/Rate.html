@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Rating</title>
+	<link rel="stylesheet" type="text/css" href="css/rate.css">
+</head>
+<body>
+	<header>
+		<div class="main">
+			<div class="logo">
+				<img src="5.jpg">
+			</div>
+			<ul>
+				<li><a href="Home.html">Home</a></li>
+				<li><a href="About.html">About</a></li>	
+				<li><a href="ContactUs.html">Contact Us</a></li>
+				<li><a href="index.html">Logout</a></li>
+			</ul>
+		</div>
+    </header>
+	<div class="wrapper">
+		<div class="title">
+			Your Skill Level
+		</div>
+		<div class="form">
+			<div class="input_field">
+				<label>Category</label>
+				<div class="custom_select">
+					<select name="slct1" id="slct1" onchange="populate(this.id,'slct2')">
+						<option value="">--Select--</option>
+						<option value="1">Programming & Tech</option>
+						<option value="2">Lifestyle</option>
+						<option value="3">Writing & Translation</option>
+						<option value="4">Digital Technology</option>
+						<option value="5">Video & Animation</option>
+						<option value="6">Music & Audio</option>
+						<option value="7">Business</option>
+					</select>
+				</div>
+			</div>
+			<div class="input_field">
+				<label>Sub Category</label>
+				<div  class="custom_select">
+					<select name="slct2" id="slct2">
+						<option>--Select--</option>
+					</select>
+				</div>
+			</div>
+			<div class="input_field">
+				<label>Number of Projects</label>
+				<input type="number" class="input">
+			</div>
+			<div class="input_field">
+				<label>Project Description</label>
+				<textarea class="textarea"></textarea>
+			</div>
+			<div class="input_field">
+				<label>Experience</label>
+				<div class="custom_select">
+					<select>
+						<option value="">--Select--</option>
+						<option value="0">0 yrs</option>
+						<option value="1">1 - 3 yrs</option>
+						<option value="3">3 - 5 yrs</option>
+						<option value="5">5+ yrs</option>
+					</select>
+				</div>
+			</div>
+			<div class="input_field">
+				<label>Income Expectations</label>
+				<div class="custom_select">
+					<select>
+						<option value="">--Select--</option>
+						<option value="0">0-2000</option>
+						<option value="2">2000-5000</option>
+						<option value="5">5000-20000</option>
+						<option value="20">20000+</option>
+					</select>
+				</div>
+			</div>
+			<div class="input_field">
+				<input type="submit" value="Provide Skill Level" class="btn">
+			</div>
+		</div>
+	</div>
+
+	<script>
+		function populate(s1,s2){
+			var s1 = document.getElementById(s1);
+			var s2 = document.getElementById(s2);
+			s2.innerHTML= "";
+			if(s1.value == "1"){
+				var optionArray = ['1|Data Analysis & Reports','2|Website Builders & CMS','3|Convert Files','4|User Testing','5|Web Programming','6|Chatbots','7|Game Development','8|Desktop Applications','9|QA','10|Databases','11|E-Commerce Development','12|Mobile Apps','13|Support & IT','14|Online Coding LessonsNew','15|Development for StreamersNew','16|WordPress','17|Cybersecurity & Data ProtectionNew'];
+			}
+			else if(s1.value == "2"){
+				var optionArray = ['1|Greeting Cards & Videos','2|Cooking Lessons','3|Celebrity Impersonators','4|Spiritual & Healing','5|Personal StylistsNew','6|Your Message On...','7|Family & Genealogy','8|Astrology & Readings','9|Viral Videos','10|Traveling','11|Online Lessons','12|Arts & Crafts','13|Fitness Lessons','14|Craft Lessons','15|Collectibles','16|Gaming','17|Relationship Advice','18|Health, Nutrition & Fitness'];
+			}
+			else if(s1.value == "3"){
+				var optionArray = [];
+			}
+			else if(s1.value == "4"){
+				var optionArray = ['1|Local SEO','2|Domain Research','3|E-Commerce Marketing','4|Web Traffic','5|Influencer Marketing','6|Mobile Marketing & Advertising','7|Music Promotion'];
+			}
+			else if(s1.value == "5"){
+				var optionArray = [];
+			}
+			else if(s1.value == "6"){
+				var optionArray = [];
+			}
+			else if(s1.value == "7"){
+				var optionArray = ['1|Business Plans','2|Lead Generation','3|Legal Consulting','4|HR ConsultingNew','5|Project ManagementNew','6|Career Counseling','7|Branding Services','8|Business Consulting','9|Flyer Distribution','10|Data Entry','11|Virtual Assistant','12|Presentations','13|Market Research','14|E-Commerce ManagementNew','15|Financial ConsultingNew'];
+			}
+
+			for(var option in optionArray)
+			{
+				var pair = optionArray[option].split("|");
+				var newoption = document.createElement("option");
+
+				newoption.value = pair[0];
+				newoption.innerHTML= pair[1];
+				s2.options.add(newoption);
+			}
+		}
+	</script>
+</body>
+</html>
