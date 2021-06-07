@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Post A Request</title>
+	<link rel="stylesheet" type="text/css" href="css/post.css">
+</head>
+<body>
+	<header>
+		<div class="main">
+			<div class="logo">
+				<img src="5.jpg">
+			</div>
+			<ul>
+				<li><a href="Home.html">Home</a></li>
+				<li><a href="Explore.php">Explore</a></li>	
+				<li><a href="ContactUs.html">Contact Us</a></li>
+				<li><a href="index.html">Logout</a></li>
+			</ul>
+		</div>
+    </header>
+	<div class="wrapper">
+		<div class="title">
+			What Service Are You Looking For ?
+		</div>
+		<div class="form">
+			<form action="/website/post_buyer.php" method="POST">
+			<div class="input_field">
+				<label>Describe the service you are looking for ?</label>
+				<textarea class="textarea" name="aboutProject" placeholder="Let us know about your Project"></textarea>
+			</div>
+			<div class="input_field">
+				<label>Choose a Category</label>
+				<div class="custom_select">
+					<select name="slct1" id="slct1" onchange="populate(this.id,'slct2')">
+						<option value="">--Select--</option>
+						<option value="Programming & Tech">Programming & Tech</option>
+						<option value="Lifestyle">Lifestyle</option>
+						<option value="Writing & Translation">Writing & Translation</option>
+						<option value="Digital Technology">Digital Technology</option>
+						<option value="Video & Animation5">Video & Animation</option>
+						<option value="Music & Audio">Music & Audio</option>
+						<option value="Business">Business</option>
+					</select>
+				</div>
+			</div>
+			<div class="input_field">
+				<label>Choose a Sub Category</label>
+				<div  class="custom_select">
+					<select name="slct2" id="slct2">
+						<option>--Select--</option>
+					</select>
+				</div>
+			</div>
+			<div class="input_field">
+				<label>When would you like your service delivered ?</label>
+				<div class="custom_select">
+					<select name="slct3">
+						<option value="">--Select--</option>
+						<option value="24 Hours">24 Hours</option>
+						<option value="3 Days">3 Days</option>
+						<option value="7 Days">7 Days</option>
+						<option value="Other">Other</option>
+					</select>
+				</div>
+			</div>
+			<div class="input_field">
+				<label>What is your budget for this service ?</label>
+				<input type="text" placeholder="Rs" name="budget" class="input">		
+			</div>
+			<div class="input_field">
+				<input type="submit" value="Submit Request" class="btn">
+			</div>
+			</form>
+		</div>
+	</div>
+
+	<script>
+		function populate(s1,s2){
+			var s1 = document.getElementById(s1);
+			var s2 = document.getElementById(s2);
+			s2.innerHTML= "";
+			if(s1.value == "Programming & Tech"){
+				var optionArray = ['1|Data Analysis & Reports','2|Website Builders & CMS','3|Convert Files','4|User Testing','5|Web Programming','6|Chatbots','7|Game Development','8|Desktop Applications','9|QA','10|Databases','11|E-Commerce Development','12|Mobile Apps','13|Support & IT','14|Online Coding LessonsNew','15|Development for StreamersNew','16|WordPress','17|Cybersecurity & Data ProtectionNew'];
+			}
+			else if(s1.value == "Lifestyle"){
+				var optionArray = ['1|Greeting Cards & Videos','2|Cooking Lessons','3|Celebrity Impersonators','4|Spiritual & Healing','5|Personal StylistsNew','6|Your Message On...','7|Family & Genealogy','8|Astrology & Readings','9|Viral Videos','10|Traveling','11|Online Lessons','12|Arts & Crafts','13|Fitness Lessons','14|Craft Lessons','15|Collectibles','16|Gaming','17|Relationship Advice','18|Health, Nutrition & Fitness'];
+			}
+			else if(s1.value == "Writing & Translation"){
+				var optionArray = ['1|Legal Writing','2|UX Writing','3|Podcast Writing','4|Email Copy','5|Online Language LessonsNew','6|Product Descriptions','7|Proofreading & Editing','8|Creative Writing','9|Transcripts','10|Website Content','11|Grant Writing','12|Business Names & Slogans','13|Case Studies','14|White Papers','15|Press Releases','16|Research & Summaries','17|Resume Writing','18|Brand Voice & Tone','19|Beta Reading','20|Scriptwriting','21|Cover Letters','22|Speechwriting','23|Book EditingNew','24|LinkedIn Profiles','25|Technical Writing','26|Translation','27|Sales Copy','28|Articles & Blog Posts','29|Book & eBook Writing','30|Social Media Copy'];
+			}
+			else if(s1.value == "Digital Technology"){
+				var optionArray = ['1|Local SEO','2|Domain Research','3|E-Commerce Marketing','4|Web Traffic','5|Influencer Marketing','6|Mobile Marketing & Advertising','7|Music Promotion'];
+			}
+			else if(s1.value == "Video & Animation"){
+				var optionArray = ['1|Slideshows Videos','2|eLearning Video ProductionNew','3|Product Photography','4|Animation for Streamers','5|Screencasting Videos','6|Video Editing','7|Local PhotographyBeta','8|Animated GIFs','9|3D Product Animation','10|Game Trailers','11|Article to VideoNew','12|Short Video Ads','13|Visual Effects','14|Book Trailers','15|Logo Animation','16|Unboxing VideosNew','17|Spokespersons Videos','18|Real Estate Promos','19|Live Action Explainers','20|Lyric & Music Videos','21|App & Website Previews','22|Character Animation','23|Animation for Kids','24|Subtitles & Captions','25|Intros & Outros','26|Whiteboard & Animated Explainers'];
+			}
+			else if(s1.value == "Music & Audio"){
+				var optionArray = ['1|Podcast EditingNew','2|DJ Drops & Tags','3|Mixing & Mastering','4|Session Musicians','5|Vocal Tuning','6|Voice Over','7|Producers & Composers','8|Online Music LessonsNew','9|Jingles & Intros','10|SongwritersNew','11|Music TranscriptionNew','12|Singers & Vocalists','13|Audio Ads ProductionNew','14|Sound DesignNew','15|Audiobook ProductionNew','16|Dialogue Editing'];
+			}
+			else if(s1.value == "Business"){
+				var optionArray = ['1|Business Plans','2|Lead Generation','3|Legal Consulting','4|HR ConsultingNew','5|Project ManagementNew','6|Career Counseling','7|Branding Services','8|Business Consulting','9|Flyer Distribution','10|Data Entry','11|Virtual Assistant','12|Presentations','13|Market Research','14|E-Commerce ManagementNew','15|Financial ConsultingNew'];
+			}
+
+			for(var option in optionArray)
+			{
+				var pair = optionArray[option].split("|");
+				var newoption = document.createElement("option");
+
+				newoption.value = pair[1];
+				newoption.innerHTML= pair[1];
+				s2.options.add(newoption);
+			}
+		}
+	</script>
+</body>
+</html>
